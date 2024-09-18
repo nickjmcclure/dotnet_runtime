@@ -589,7 +589,10 @@ namespace System.DirectoryServices.AccountManagement
             }
 
             if (commitChanges)
+            {
+                de.Options.SecurityMasks = SecurityMasks.Dacl;
                 de.CommitChanges();
+            }
         }
         /// <summary>
         /// Read the Account Control From the Directory entry.  If the control is read then set or
